@@ -1,2 +1,2 @@
-# templates_default_typst
+# librelibrary-zh
 LibreGeist-Press-Project's default templates for typst.
