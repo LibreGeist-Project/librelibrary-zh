@@ -5,8 +5,7 @@
 #import "@preview/shadowed:0.2.0": shadowed
 #import "@preview/wrap-it:0.1.1": wrap-content
 
-
-#let gfsize = 1mm;
+#let gfsize = 15.5mm;
 #let isNormalPage = true;
 #let bak_font = DEF_ZH_SANS_FONT;
 
@@ -40,7 +39,7 @@
       hide[#text(size: 1pt)[\$]]
   }
 
-  set page(width: 890/16mm, height: 1240/16mm) if (isNormalPage)
+  set page(width: 787mm, height: 1092mm) if (isNormalPage)
   set page(numbering: "1")
   set text(
     font: (
@@ -58,19 +57,8 @@
   show quote: set align(center)
   show quote: set pad(x: 1em)
   show quote: text.with(font: "Zhuque Fangsong (technical preview)")
-
-  show "？": text.with(font: bak_font)
-  show "！": text.with(font: bak_font)
-  show "——": text.with(font: bak_font)
-
-  show strong: it => {
-    set text(font: bak_font, text.size*0.94)
-    // sans-serif 代表系统默认无衬线字体
-    it// 可选：保留加粗样式或替换为其他效果
-  }
-
+  
   show heading: it => {
-    set text(font: bak_font)
     it
     v(0.5em)
   }
@@ -86,17 +74,19 @@
   }
 
   set heading(numbering: none)
-  set par(spacing: 0.8em, justify: true, first-line-indent: (
+  set par(leading: 0.8em, spacing: 1em, justify: true, first-line-indent: (
     all: true,
     amount: 2em,
   ))
-  set math.cancel(stroke: (thickness: 0.8mm))
+  
+
+  set math.cancel(stroke: (thickness: 0.1mm))
   content
 }
 
 #let prelims(head, content) = {
   set page(footer: none)
-  set text(gfsize + 5mm)
+  set text(gfsize)
   set align(center + horizon)
   v(-4em)
   head
