@@ -78,7 +78,13 @@
     all: true,
     amount: 2em,
   ))
-  
+
+  show outline.entry.where(
+  level: 1
+  ): it => {
+    set block(above: 2em)
+    strong(it)
+  }
 
   set math.cancel(stroke: (thickness: 0.1mm))
   content
