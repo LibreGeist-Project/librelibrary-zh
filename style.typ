@@ -86,7 +86,7 @@
 
 #let prelims(head, content) = {
   set page(footer: none)
-  set text(gfsize)
+  set text(gfsize*1.2)
   set align(center + horizon)
   v(-4em)
   head
